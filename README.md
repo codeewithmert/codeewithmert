@@ -37,12 +37,8 @@ Açık kaynak topluluklarında aktif olarak katkı sağlıyor, öğrendiklerimi 
 - **Python** – Otomasyon, veri bilimi, yapay zeka, API
 - **PHP** – Web uygulamaları
 - **C# & .NET** – Masaüstü yazılım ve veri tabanı projeleri
-- **HTML, CSS, JS, React** – Modern, responsive arayüzler
+- **HTML, CSS, JS** – Modern, responsive arayüzler
 - **AI & ML** – Görüntü işleme, makine öğrenmesi, chatbotlar
-- **SQL, SQLite** – Veri yönetimi, analiz ve entegrasyon
-- **Linux** – Terminal, otomasyon, sunucu
-- **Arduino** – IoT ve gömülü sistemler
-- **Figma** – UI/UX prototipleme
 
 ---
 
@@ -52,18 +48,8 @@ Açık kaynak topluluklarında aktif olarak katkı sağlıyor, öğrendiklerimi 
 |------------------------------|-------------------------------|--------------------------------------------------|
 | **AI Otomasyon Botu**        | Python, ML                    | Veri toplama, analiz ve otomasyon                 |
 | **Smart Web Dashboard**      | React, PHP, HTML, CSS, JS     | Modern ve ölçeklenebilir web paneli               |
-| **Envanter Sistemi**         | C#, .NET, SQL                 | Kurumsal veritabanı yönetimi ve raporlama         |
 | **Görüntü İşleme Projesi**   | Python, OpenCV, ML            | Nesne tanıma ve analiz uygulamaları               |
 | **IoT Sensör Platformu**     | Arduino, Python               | Gerçek zamanlı veri toplama ve görselleştirme     |
-
-<details>
-<summary><b>Diğer Projeler (Genişletmek için tıkla)</b></summary>
-
-- 📊 **Data Analyzer**: Python ile veri temizleme & analiz otomasyonu  
-- 🤖 **Chatbot**: Python, ML - Doğal dil işleme temelli sohbet botu  
-- 🌱 **IoT Dashboard**: Arduino + Web ile sensör verisi izleme  
-- 🎨 **UI Kit**: Figma ile component tabanlı arayüz kütüphanesi  
-</details>
 
 ---
 
