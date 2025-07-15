@@ -47,7 +47,7 @@ Açık kaynak topluluklarında aktif olarak katkı sağlıyor, öğrendiklerimi 
 | Proje                        | Teknolojiler                  | Açıklama                                         |
 |------------------------------|-------------------------------|--------------------------------------------------|
 | **AI Otomasyon Botu**        | Python, ML                    | Veri toplama, analiz ve otomasyon                 |
-| **Smart Web Dashboard**      | React, PHP, HTML, CSS, JS     | Modern ve ölçeklenebilir web paneli               |
+| **Smart Web Dashboard**      | PHP, HTML, CSS, JS     | Modern ve ölçeklenebilir web paneli               |
 | **Görüntü İşleme Projesi**   | Python, OpenCV, ML            | Nesne tanıma ve analiz uygulamaları               |
 | **IoT Sensör Platformu**     | Arduino, Python               | Gerçek zamanlı veri toplama ve görselleştirme     |
 
