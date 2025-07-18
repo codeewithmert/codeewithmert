@@ -45,6 +45,8 @@ Açık kaynak topluluklarında aktif olarak katkı sağlıyor, öğrendiklerimi 
 ## 🌟 Öne Çıkan Projeler
 
 <!--PROJECTS_START-->
+| Proje | Teknolojiler |
+|---|---|
 <!--PROJECTS_END-->
 
 ---
