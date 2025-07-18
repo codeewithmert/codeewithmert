@@ -44,13 +44,12 @@ Açık kaynak topluluklarında aktif olarak katkı sağlıyor, öğrendiklerimi 
 
 ## 🌟 Öne Çıkan Projeler
 
-| Proje | Açıklama |
-|---|---|
-| [AIOtomasyonBotu](https://github.com/codeewithmert/AIOtomasyonBotu) | Veri toplama, analiz ve otomasyon |
-| [codeewithmert](https://github.com/codeewithmert/codeewithmert) | Açıklama yok |
-| [OtomatikFatura](https://github.com/codeewithmert/OtomatikFatura) | Fotoğraf Döküman Dosyalarını Okur OCR Araclığıyla Dijitale geçirir. |
-| [secure-password-evaluator](https://github.com/codeewithmert/secure-password-evaluator) | Şifrelerin güvenliğini analiz eden, sızmış şifreleri tespit eden ve öneriler sunan modern Node.js kütüphanesi. |
-| [turkish-tools-pro](https://github.com/codeewithmert/turkish-tools-pro) | Kapsamlı Türkçe veri işleme, doğrulama, formatlama ve sahte Türkçe veri üretme araçları kütüphanesi |
+| Proje | Açıklama | Star | Fork | Issue Açık mı? |
+|---|---|---|---|---|
+| [AIOtomasyonBotu](https://github.com/codeewithmert/AIOtomasyonBotu) | Veri toplama, analiz ve otomasyon | 1 | 0 | Evet |
+| [OtomatikFatura](https://github.com/codeewithmert/OtomatikFatura) | Fotoğraf Döküman Dosyalarını Okur OCR Araclığıyla Dijitale geçirir. | 1 | 0 | Evet |
+| [secure-password-evaluator](https://github.com/codeewithmert/secure-password-evaluator) | Şifrelerin güvenliğini analiz eden, sızmış şifreleri tespit eden ve öneriler sunan modern Node.js kütüphanesi. | 0 | 0 | Evet |
+| [turkish-tools-pro](https://github.com/codeewithmert/turkish-tools-pro) | Kapsamlı Türkçe veri işleme, doğrulama, formatlama ve sahte Türkçe veri üretme araçları kütüphanesi | 1 | 0 | Evet |
 
 ## 🎯 Hedeflerim
 
