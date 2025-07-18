@@ -1,15 +1,10 @@
-name: Otomatik README Proje Tablosu
+name: README Proje Tablosu Otomatik
 
 on:
   push:
     paths:
-      - '**/*.py'
-      - '**/*.php'
-      - '**/*.html'
-      - '**/*.js'
-      - '**/*.cs'
-      - '**/*.cpp'
-      - '**/*.md'
+      - '**/*'
+      - '!README.md'
   workflow_dispatch:
 
 jobs:
@@ -17,30 +12,62 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Depoyu klonla
+      - name: Repo'yu klonla
         uses: actions/checkout@v3
 
-      - name: Python kurulumu
+      - name: Python kur
         uses: actions/setup-python@v4
         with:
           python-version: '3.x'
 
-      - name: Gereken paketleri yükle
-        run: pip install requests
-
       - name: README.md dosyasını güncelle
         run: |
-          echo "| Proje | Teknolojiler | Açıklama |" > table.md
-          echo "|---|---|---|" >> table.md
-          echo "| **AI Otomasyon Botu** | Python, ML | Veri toplama, analiz ve otomasyon |" >> table.md
-          echo "| **Görüntü İşleme Projesi** | Python, OpenCV, ML | Nesne tanıma ve analiz uygulamaları |" >> table.md
-          echo "| **IoT Sensör Platformu** | Arduino, Python | Gerçek zamanlı veri toplama ve görselleştirme |" >> table.md
-          sed -i '/<!--PROJECTS_START-->/, /<!--PROJECTS_END-->/c\\<!--PROJECTS_START-->\n'\"$(cat table.md)\"'\n<!--PROJECTS_END-->' README.md
+          import os
 
-      - name: Değişiklikleri commit et ve gönder
+          def detect_techs(folder):
+              techs = set()
+              ext_map = {
+                  '.php': 'PHP',
+                  '.py': 'Python',
+                  '.js': 'JavaScript',
+                  '.html': 'HTML',
+                  '.css': 'CSS',
+                  '.cpp': 'C++',
+                  '.cs': 'C#'
+              }
+              for root, _, files in os.walk(folder):
+                  for file in files:
+                      ext = os.path.splitext(file)[1]
+                      if ext in ext_map:
+                          techs.add(ext_map[ext])
+              return ', '.join(sorted(techs)) if techs else '-'
+
+          projects = []
+          for entry in os.listdir('.'):
+              if os.path.isdir(entry) and entry not in ['.git', '.github']:
+                  techs = detect_techs(entry)
+                  projects.append((entry, techs))
+
+          table = '| Proje | Teknolojiler |\n|---|---|\n'
+          for name, techs in sorted(projects):
+              table += f'| **{name}** | {techs} |\n'
+
+          with open('README.md', encoding='utf-8') as f:
+              readme = f.read()
+
+          start = readme.find('<!--PROJECTS_START-->')
+          end = readme.find('<!--PROJECTS_END-->') + len('<!--PROJECTS_END-->')
+          new_block = f'<!--PROJECTS_START-->\n{table}<!--PROJECTS_END-->'
+          new_readme = readme[:start] + new_block + readme[end:]
+
+          with open('README.md', 'w', encoding='utf-8') as f:
+              f.write(new_readme)
+        shell: python
+
+      - name: Commit ve Push Et
         run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add README.md
-          git commit -m "🔄 Otomatik proje tablosu güncellemesi" || echo "Değişiklik yok"
+          git commit -m "🧠 README proje tablosu otomatik güncellendi" || echo "Değişiklik yok"
           git push
