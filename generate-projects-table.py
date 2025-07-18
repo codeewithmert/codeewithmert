@@ -1,18 +1,29 @@
 import requests
 
 USERNAME = "codeewithmert"
-API_URL = f"https://api.github.com/users/{USERNAME}/repos"
+API_URL = f"https://api.github.com/users/{USERNAME}/repos?per_page=100"
 
-response = requests.get(API_URL)
+headers = {
+    "Accept": "application/vnd.github.v3+json"
+}
+
+response = requests.get(API_URL, headers=headers)
 repos = response.json()
 
-table = "| Proje | Açıklama |\n|---|---|\n"
+table = "| Proje | Açıklama | Star | Fork | Issue Açık mı? |\n|---|---|---|---|---|\n"
 
 for repo in repos:
-    name = repo["name"]
+    repo_name = repo["name"]
+    if repo_name.lower() == "codeewithmert":
+        continue  # codeewithmert projesini atla
+
     desc = repo["description"] or "Açıklama yok"
     url = repo["html_url"]
-    table += f"| [{name}]({url}) | {desc} |\n"
+    stars = repo["stargazers_count"]
+    forks = repo["forks_count"]
+    issues_open = "Evet" if repo["has_issues"] else "Hayır"
+
+    table += f"| [{repo_name}]({url}) | {desc} | {stars} | {forks} | {issues_open} |\n"
 
 with open("README.md", "r", encoding="utf-8") as f:
     content = f.read()
