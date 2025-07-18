@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:  # 👈 Bu satır "Koda Yenile" butonunu ekler
 
 permissions:
   contents: write
@@ -39,4 +40,3 @@ jobs:
             git push origin HEAD:main
           else
             echo "No changes to commit"
-          fi
