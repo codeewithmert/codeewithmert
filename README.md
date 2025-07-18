@@ -44,11 +44,8 @@ Açık kaynak topluluklarında aktif olarak katkı sağlıyor, öğrendiklerimi 
 
 ## 🌟 Öne Çıkan Projeler
 
-| Proje                        | Teknolojiler                  | Açıklama                                         |
-|------------------------------|-------------------------------|--------------------------------------------------|
-| **AI Otomasyon Botu**        | Python, ML                    | Veri toplama, analiz ve otomasyon                 |
-| **Görüntü İşleme Projesi**   | Python, OpenCV, ML            | Nesne tanıma ve analiz uygulamaları               |
-| **IoT Sensör Platformu**     | Arduino, Python               | Gerçek zamanlı veri toplama ve görselleştirme     |
+<!--PROJECTS_START-->
+<!--PROJECTS_END-->
 
 ---
 
