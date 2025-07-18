@@ -1,74 +1,38 @@
-name: README Proje Tablosu Otomatik
-permissions:
-  contents: write
+name: README Otomatik Güncelle
+
 on:
   push:
-    paths:
-      - '**/*'
-      - '!README.md'
-  workflow_dispatch:
+    branches:
+      - main  # veya kendi ana branşın
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: write
 
 jobs:
   update-readme:
     runs-on: ubuntu-latest
-
     steps:
       - name: Repo'yu klonla
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Python kur
         uses: actions/setup-python@v4
         with:
-          python-version: '3.x'
+          python-version: 3.x
+
+      - name: Gerekli modülleri yükle
+        run: pip install requests
 
       - name: README.md dosyasını güncelle
-        run: |
-          import os
+        run: python generate-projects-table.py
 
-          def detect_techs(folder):
-              techs = set()
-              ext_map = {
-                  '.php': 'PHP',
-                  '.py': 'Python',
-                  '.js': 'JavaScript',
-                  '.html': 'HTML',
-                  '.css': 'CSS',
-                  '.cpp': 'C++',
-                  '.cs': 'C#'
-              }
-              for root, _, files in os.walk(folder):
-                  for file in files:
-                      ext = os.path.splitext(file)[1]
-                      if ext in ext_map:
-                          techs.add(ext_map[ext])
-              return ', '.join(sorted(techs)) if techs else '-'
-
-          projects = []
-          for entry in os.listdir('.'):
-              if os.path.isdir(entry) and entry not in ['.git', '.github']:
-                  techs = detect_techs(entry)
-                  projects.append((entry, techs))
-
-          table = '| Proje | Teknolojiler |\n|---|---|\n'
-          for name, techs in sorted(projects):
-              table += f'| **{name}** | {techs} |\n'
-
-          with open('README.md', encoding='utf-8') as f:
-              readme = f.read()
-
-          start = readme.find('<!--PROJECTS_START-->')
-          end = readme.find('<!--PROJECTS_END-->') + len('<!--PROJECTS_END-->')
-          new_block = f'<!--PROJECTS_START-->\n{table}<!--PROJECTS_END-->'
-          new_readme = readme[:start] + new_block + readme[end:]
-
-          with open('README.md', 'w', encoding='utf-8') as f:
-              f.write(new_readme)
-        shell: python
-
-      - name: Commit ve Push Et
+      - name: Commit & Push
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add README.md
-          git commit -m "🧠 README proje tablosu otomatik güncellendi" || echo "Değişiklik yok"
+          git commit -m "🧠 README proje tablosu otomatik güncellendi" || echo "No changes to commit"
           git push
