@@ -1,0 +1,46 @@
+name: Otomatik README Proje Tablosu
+
+on:
+  push:
+    paths:
+      - '**/*.py'
+      - '**/*.php'
+      - '**/*.html'
+      - '**/*.js'
+      - '**/*.cs'
+      - '**/*.cpp'
+      - '**/*.md'
+  workflow_dispatch:
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Depoyu klonla
+        uses: actions/checkout@v3
+
+      - name: Python kurulumu
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Gereken paketleri yükle
+        run: pip install requests
+
+      - name: README.md dosyasını güncelle
+        run: |
+          echo "| Proje | Teknolojiler | Açıklama |" > table.md
+          echo "|---|---|---|" >> table.md
+          echo "| **AI Otomasyon Botu** | Python, ML | Veri toplama, analiz ve otomasyon |" >> table.md
+          echo "| **Görüntü İşleme Projesi** | Python, OpenCV, ML | Nesne tanıma ve analiz uygulamaları |" >> table.md
+          echo "| **IoT Sensör Platformu** | Arduino, Python | Gerçek zamanlı veri toplama ve görselleştirme |" >> table.md
+          sed -i '/<!--PROJECTS_START-->/, /<!--PROJECTS_END-->/c\\<!--PROJECTS_START-->\n'\"$(cat table.md)\"'\n<!--PROJECTS_END-->' README.md
+
+      - name: Değişiklikleri commit et ve gönder
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add README.md
+          git commit -m "🔄 Otomatik proje tablosu güncellemesi" || echo "Değişiklik yok"
+          git push
