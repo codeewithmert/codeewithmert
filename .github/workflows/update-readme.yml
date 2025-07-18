@@ -1,5 +1,6 @@
 name: README Proje Tablosu Otomatik
-
+permissions:
+  contents: write
 on:
   push:
     paths:
