@@ -46,8 +46,9 @@ Açık kaynak topluluklarında aktif olarak katkı sağlıyor, öğrendiklerimi 
 
 | Proje | Açıklama | Star | Fork | Issue Açık mı? |
 |---|---|---|---|---|
+| [2048Oyunu](https://github.com/codeewithmert/2048Oyunu) | 2048, 4x4 kareli bir tabloda aynı sayıları kaydırıp toplayarak 2048 sayısına ulaşmayı amaçlayan eğlenceli ve stratejik bir bulmaca oyunudur. Her hamlede yeni sayılar eklenir ve amaç en yüksek puana ulaşmaktır. Basit ama bağımlılık yapıcıdır. | 0 | 0 | Evet |
 | [AIOtomasyonBotu](https://github.com/codeewithmert/AIOtomasyonBotu) | Veri toplama, analiz ve otomasyon | 1 | 0 | Evet |
-| [EticaretPhp](https://github.com/codeewithmert/EticaretPhp) | Php İle oluşturulmuş basit bir E-Ticaret Sitesindir. | 0 | 0 | Evet |
+| [EticaretPhp](https://github.com/codeewithmert/EticaretPhp) | Php İle oluşturulmuş basit bir E-Ticaret Sitesindir. | 1 | 0 | Evet |
 | [OtomatikFatura](https://github.com/codeewithmert/OtomatikFatura) | Fotoğraf Döküman Dosyalarını Okur OCR Araclığıyla Dijitale geçirir. | 1 | 0 | Evet |
 | [secure-password-evaluator](https://github.com/codeewithmert/secure-password-evaluator) | Şifrelerin güvenliğini analiz eden, sızmış şifreleri tespit eden ve öneriler sunan modern Node.js kütüphanesi. | 1 | 0 | Evet |
 | [turkish-tools-pro](https://github.com/codeewithmert/turkish-tools-pro) | Kapsamlı Türkçe veri işleme, doğrulama, formatlama ve sahte Türkçe veri üretme araçları kütüphanesi | 1 | 0 | Evet |
