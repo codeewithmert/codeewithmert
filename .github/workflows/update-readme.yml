@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-  workflow_dispatch:  # 👈 Bu satır "Koda Yenile" butonunu ekler
+  workflow_dispatch:
 
 permissions:
   contents: write
